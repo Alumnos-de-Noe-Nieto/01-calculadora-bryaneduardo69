@@ -1,39 +1,12 @@
-"""
-Nivel 2: Validación de repeticiones I/X/C/M.
 
-Los símbolos I, X, C y M pueden repetirse hasta 3 veces consecutivas.
-Ejemplos válidos: III, XXX, CCC, MMM
-Ejemplos inválidos: IIII, XXXX, CCCC, MMMM
-"""
+
 
 def validar_repeticiones_icxm(cadena: str) -> bool:
-    """
-    Valida que los símbolos I, X, C, M no se repitan más de 3 veces consecutivas.
+    # Pasamos todo a mayúsculas para que no falle por eso
+    texto = cadena.upper()
 
-    Nivel 2: Análisis Sintáctico - Repeticiones de símbolos repetibles
+    # Estos son los que no se valen en romano
+    prohibidos = ["IIII", "XXXX", "CCCC", "MMMM"]
 
-    💡 PISTA: Verifica si existen los patrones "IIII", "XXXX", "CCCC", "MMMM"
-    💡 PISTA: Si encuentras cualquier patrón de 4+ repeticiones, retorna False
-    💡 PISTA: Recuerda: IIII, XXXX, CCCC, MMMM son INVÁLIDOS
-
-    Args:
-        cadena (str): La cadena de números romanos validada en Nivel 1
-
-    Returns:
-        bool: True si no hay más de 3 repeticiones, False en caso contrario
-
-    Examples:
-        >>> validar_repeticiones_icxm("III")
-        True
-        >>> validar_repeticiones_icxm("IIII")
-        False
-        >>> validar_repeticiones_icxm("XIX")
-        True
-        >>> validar_repeticiones_icxm("XXXX")
-        False
-        >>> validar_repeticiones_icxm("MMMCMXCIV")
-        True
-        >>> validar_repeticiones_icxm("MMMM")
-        False
-    """
-    raise NotImplementedError()
+    # Revisamos si alguno de esos está en el texto
+    return all(patron not in texto for patron in prohibidos)

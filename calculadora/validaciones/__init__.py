@@ -14,7 +14,7 @@ from .restas import validar_restas
 
 __all__ = [
     'validar_simbolos',
-    'validar_repeticiones_icxm',  
+    'validar_repeticiones_icxm',
     'validar_repeticiones_vld',
     'validar_orden_descendente',
     'validar_restas',
