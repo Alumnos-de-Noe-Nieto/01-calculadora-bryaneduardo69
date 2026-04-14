@@ -7,7 +7,7 @@ from calculadora.validaciones.restas import validar_restas
 
 
 def romano_a_entero(cadena: str) -> int:
-    # 1. VALIDACIONES
+    # 1. VALIDACIONE
     if not validar_simbolos(cadena):
         raise ExpresionInvalida("Símbolos inválidos")
     if not validar_repeticiones_icxm(cadena):
